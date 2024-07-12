@@ -1,0 +1,191 @@
+:root {
+  --vDGBlue: hsl(217, 19%, 35%);
+  --dDBlue: hsl(214, 17%, 51%);
+  --gBlue: hsl(212, 23%, 69%);
+  --lGBlue: hsl(210, 46%, 95%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gBlue);
+}
+
+body {
+  background-color: var(--lGBlue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+}
+
+.card-content {
+  margin: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content h1 {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--vDGBlue);
+  margin: 1rem 0;
+}
+
+.card-content p {
+  margin: 1rem 0;
+  line-height: 1.5rem;
+}
+
+footer {
+  display: flex;
+}
+
+.profile {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.profile-info p {
+  line-height: 0.5rem;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profile-name {
+  font-weight: bold;
+  color: var(--dDBlue);
+  margin: 0;
+}
+
+.share-icon svg {
+  width: 1.1rem;
+  cursor: pointer;
+}
+
+.share-icon {
+    background-color: var(--lGBlue);
+    border-radius: 50%;  
+    padding: .5rem;
+    align-self: center;
+    justify-self: center;
+}
+
+.share-icon:hover {
+    background-color: var(--vDGBlue);
+}
+
+.share-icon:hover svg path{
+    fill: white;
+}
+
+.share-popup {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  position: absolute;
+  bottom: 5rem;
+  right: -7.5rem;
+  background-color: var(--vDGBlue);
+  color: white;
+  border-radius: 8px;
+  padding: 0 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.share-popup::before {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    right: 44%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--vDGBlue) transparent transparent transparent;
+}
+
+.share-popup p {
+ margin-right: 1rem;
+  font-size: 12px;
+  letter-spacing: .5rem;
+}
+
+.share-popup a {
+  margin-right: 10px;
+}
+
+.share-popup img {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 1000px) {
+    .card {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .card-image {
+        height: 200px;
+        margin-bottom: 2rem;
+    }
+  
+    .card-content {
+        margin: 0;
+    }
+
+    .card-content h1 {
+        font-size: 1.3em;
+        margin-bottom: 0;
+        margin: .5rem 2.5rem;
+    }
+
+    .card-content p {
+        margin: .5rem 2.5rem;
+    }
+
+    footer {
+        margin: 1rem 2.5rem;
+    }
+
+    .profile-info p{
+        margin-left: 0;
+        line-height: 1rem;
+    }
+
+    .share-popup {
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .share-popup::before {
+        display: none;
+    }
+}
